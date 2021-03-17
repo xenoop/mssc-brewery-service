@@ -1,8 +1,8 @@
 package com.springboot.msscbeerservice.web.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.springboot.msscbeerservice.domain.Beer;
 import com.springboot.msscbeerservice.repository.BeerRepository;
+import com.springboot.msscbeerservice.web.mappers.BeerMapper;
 import com.springboot.msscbeerservice.web.model.BeerDto;
 import com.springboot.msscbeerservice.web.model.BeerStyleNum;
 import org.junit.jupiter.api.Test;
@@ -46,10 +46,14 @@ class BeerControllerTest {
     @MockBean
     BeerRepository beerRepository;
 
+    @Autowired
+    BeerMapper beerMapper;
+
+
     @Test
     void getBeerById() throws Exception {
 
-        given(beerRepository.findById(any())).willReturn(Optional.of(Beer.builder().build()));
+        given(beerRepository.findById(any())).willReturn(Optional.of(beerMapper.BeerDtoToBeer(getValidBeerDto())));
 
         mockMvc.perform(get("/api/v1/beer/{beerId}", UUID.randomUUID()
                 .toString())
