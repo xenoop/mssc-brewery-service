@@ -23,6 +23,10 @@ And one showing the HTTP response:
 
 include::{snippets}/v1/beer-get/http-response.adoc[]
 
+And one showing the HTTP response:
+
+include::{snippets}/v1/beer-get/path-parameters.adoc[]
+
 Response Body:
 include::{snippets}/v1/beer-get/response-body.adoc[]
 

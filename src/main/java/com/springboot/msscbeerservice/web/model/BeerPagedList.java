@@ -5,11 +5,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class BeerPagedList extends PageImpl<BeerDto> {
 
+public class BeerPagedList extends PageImpl<BeerDto> implements Serializable {
+
+
+    private static final long serialVersionUID = 7780130483813583953L;
 
     @JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
     public BeerPagedList(@JsonProperty("content") List<BeerDto> content,
@@ -28,5 +33,9 @@ public class BeerPagedList extends PageImpl<BeerDto> {
 
     public BeerPagedList(List<BeerDto> content) {
         super(content);
+    }
+
+    public BeerPagedList(List<BeerDto> content, Pageable pageable, long total) {
+        super(content, pageable, total);
     }
 }

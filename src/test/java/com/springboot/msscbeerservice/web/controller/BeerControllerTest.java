@@ -23,6 +23,7 @@ import java.math.BigDecimal;
 import java.util.UUID;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyBoolean;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*;
@@ -35,7 +36,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RequiredArgsConstructor
 @AutoConfigureRestDocs(uriHost = "dev.springboot.msscbeerservice" , uriScheme = "https",uriPort = 80)
 @WebMvcTest(BeerController.class)
-@ComponentScan(basePackages = "com.springboot.msscbeerservice.web.mappers")
+@ComponentScan(basePackages = "com.springboot.msscbeerservice.services")
 class BeerControllerTest {
     @Autowired
     MockMvc mockMvc;
@@ -49,7 +50,7 @@ class BeerControllerTest {
     @Test
     void getBeerById() throws Exception {
 
-        given(beerService.getById(any())).willReturn(getValidBeerDto());
+        given(beerService.getById(any(),anyBoolean())).willReturn(getValidBeerDto());
 
         mockMvc.perform(get("/api/v1/beer/{beerId}", UUID.randomUUID()
                 .toString())

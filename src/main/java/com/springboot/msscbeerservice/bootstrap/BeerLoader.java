@@ -3,11 +3,15 @@ package com.springboot.msscbeerservice.bootstrap;
 import com.springboot.msscbeerservice.domain.Beer;
 import com.springboot.msscbeerservice.repository.BeerRepository;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-@Component
+//@Component
+
+/**
+ * no Longer used , we re populating Beer repo with data.sql , (only for h2 databases)
+ * gonna leave it here cause why not ...
+ */
 public class BeerLoader implements CommandLineRunner {
 
     private final BeerRepository beerRepository;
