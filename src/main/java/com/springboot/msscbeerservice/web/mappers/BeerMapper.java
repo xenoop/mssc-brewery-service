@@ -2,7 +2,6 @@ package com.springboot.msscbeerservice.web.mappers;
 
 import com.springboot.msscbeerservice.domain.Beer;
 import com.springboot.msscbeerservice.web.model.BeerDto;
-
 import org.mapstruct.DecoratedWith;
 import org.mapstruct.Mapper;
 
