@@ -6,7 +6,6 @@
         <groupId>org.brewery</groupId>
         <artifactId>brewery-BOM</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
 
@@ -15,6 +14,15 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>mssc-beer-service</name>
     <description>MSSC beer Service</description>
+
+
+    <repositories>
+            <repository>
+                <id>repsy</id>
+                <name>My Private Maven Repository on Repsy</name>
+                <url>https://repo.repsy.io/mvn/xenoop/test</url>
+            </repository>
+    </repositories>
 
     <dependencies>
         <dependency>

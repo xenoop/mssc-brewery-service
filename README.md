@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/xenoop/mssc-beer-service.svg?style=svg&circle-token=4182901def83100bc1583696b1a2649145058163)](https://circleci.com/gh/xenoop/mssc-beer-service)
+[![CircleCI](https://circleci.com/gh/xenoop/mssc-brewery-service.svg?style=svg&circle-token=c324edc7a791f02a7cb767e907af839d2396a35f)](https://circleci.com/gh/xenoop/mssc-beer-service)
 
 # Beer Order Service
 
